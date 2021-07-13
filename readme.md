@@ -6,3 +6,10 @@ pip install -r requirements.txt
 
 
 flask run
+
+git:
+
+status
+add .
+commit - m "COMMENT HERE"
+push
