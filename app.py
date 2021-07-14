@@ -7,7 +7,15 @@ app = Flask(__name__)
 def success():
     return render_template("thankyou.html")
 
+@app.route('/overview')
+def overview():
+    return render_template("trackoverview.html")
+
 @app.route('/')
 def subscribe():
     return render_template("register.html")
+
+@app.route('/privacy')
+def privacy():
+    return render_template("privacy.html")    
 
