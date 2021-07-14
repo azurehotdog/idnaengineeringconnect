@@ -9,14 +9,5 @@ def success():
 
 @app.route('/')
 def subscribe():
-    return render_template("subscribe.html")
-
-@app.route('/unsubscribe')
-def unsubscribe():
-    return render_template("unsubscribe.html")
-
-@app.route('/unsubscribesuccess')
-def unsubscribesuccess():
-    return render_template("sorrytoseeyougo.html")
-
+    return render_template("register.html")
 
