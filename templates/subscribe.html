@@ -46,8 +46,8 @@
         <img src="static/mslogo.png" width="200" height="200" class="img-fluid" align="left" />
         <h5 class="float-md-start mb-0">Microsoft Identity & Network Access Engineering</h5>
         <nav class="nav nav-masthead justify-content-center float-md-end">
-          <a class="nav-link active" aria-current="page"
-            href="http://go.microsoft.com/fwlink/?LinkId=521839">Privacy Statement</a>
+          <a class="nav-link active" aria-current="page" href="http://go.microsoft.com/fwlink/?LinkId=521839">Privacy
+            Statement</a>
           <!-- <a class="nav-link" href="#">Contact</a> -->
         </nav>
       </div>
@@ -333,8 +333,6 @@
               <option value="Zimbabwe">Zimbabwe</option>
             </select>
 
-           
-
             <div class="form-group">
               <!-- <label for="email">Email</label> -->
               <br />
@@ -361,15 +359,34 @@
               </script>
 
 
+              <script type="text/javascript"
+                src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+              <script type="text/javascript">
+                var canadatext = "I would like Microsoft and its family of companies to send me the<strong>Identity & Network Access Engineering Connect newsletter</strong> by email. To withdraw consent or manage your preferences, visit the <a href='https://go.microsoft.com/fwlink/?linkid=243189'>Promotional Communications Manager</a>. <a href='http://go.microsoft.com/fwlink/?LinkId=521839'>Privacy Statement.</a>";
+                var rowtext = "I would like to receive the <strong>Identity & Network Access Engineering Connect newsletter.</strong> <a href='http://go.microsoft.com/fwlink/?LinkId=521839'>Privacy Statement.</a>"
+                $(function () {
 
-              <input type="checkbox" id="consent" name="consent" value="Agreed" onclick="terms_changed()" />
-              <label for="checkbox">By checking this box, I will receive the Identity & Network Access
-                Engineering Connect newsletter.  <a href="http://go.microsoft.com/fwlink/?LinkId=521839">Privacy Statement.</a></label><p></p>
-                <label for="checkbox"><strong>CANADA: </strong>I would like Microsoft and its family of companies to send me the Identity & Network Access
-                  Engineering Connect Newsletter by email. To withdraw consent or manage your preferences, visit the <a href="https://go.microsoft.com/fwlink/?linkid=243189">Promotional Communications Manager.</a> <a href="http://go.microsoft.com/fwlink/?LinkId=521839"> Privacy Statement.</a></label>
+                  $("#country").change(function () {
+                    var selectedValue = $(this).val();
+                    // see if canada is selected
+                    var text = document.getElementById("canada")
+                    if (selectedValue === "Canada") { $("#consenttext").html(canadatext); } else { $("#consenttext").html(rowtext); }
+                  });
+                });
+
+              </script>
+
+              <!-- Text for consent and subscribe for Canada-->
+              <label for="checkbox">By checking this box
+                <input type="checkbox" id="consent" name="consent" value="Agreed" onclick="terms_changed()"> and
+                clicking
+                <button type="submit" id="submit_button" class="btn btn-primary btn-block" disabled>Subscribe</button>
+                <p id="consenttext">I would like to receive the <strong>Identity & Network Access Engineering Connect
+                    newsletter.</strong> <a href='http://go.microsoft.com/fwlink/?LinkId=521839'>Privacy Statement.</a>
+                </p>
+              </label>
+
             </div>
-            <br />
-            <button type="submit" id="submit_button" class="btn btn-primary btn-block" disabled>Subscribe</button>
         </form>
       </main>
       </br>
@@ -383,8 +400,8 @@
 
     </div>
     <footer class="mt-auto text-white-50">
-      <p>© 2021 Microsoft.  All rights reserved.
-<br/>
+      <p>© 2021 Microsoft. All rights reserved.
+        <br />
         Powered by Azure Web Apps
       </p>
     </footer>
